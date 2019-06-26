@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "newman run tests/Collection2.json -e tests/Learning environment.json -r cli,junit,json,htmlextra"
+    "test-production": "newman run tests/Collection2.json -e tests/LearningEnvironment.json -r cli,junit,json,htmlextra"
   },
   "author": "ryma",
   "license": "ISC",
