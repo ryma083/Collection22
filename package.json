@@ -1,0 +1,19 @@
+{
+  "name": "collection2",
+  "version": "1.0.0",
+  "description": "this is project contains post request with diffrent set of data",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "newman run tests/Collection2.json -e tests/Learning environment.json -r cli,junit,json,htmlextra"
+  },
+  "author": "ryma",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^4.5.1",
+    "newman-reporter-html": "^1.0.3",
+    "newman-reporter-htmlextra": "^1.7.6"
+  }
+}

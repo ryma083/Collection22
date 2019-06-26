@@ -1,0 +1,14 @@
+{
+	"id": "e8f1cd65-dec5-4bcc-b1b1-ec0636068fe8",
+	"name": "Learning environment",
+	"values": [
+		{
+			"key": "environment_type",
+			"value": "production",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-06-26T22:51:27.627Z",
+	"_postman_exported_using": "Postman/7.2.2"
+}

@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "f76cfb26-ffd9-4cf5-ba04-4f5b9ae48bba",
+		"name": "Collection2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "https://postman-echo.com/get?environment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/get?environment",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "environment",
+									"value": ""
+								},
+								{
+									"key": "",
+									"value": "{{environment_type}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://postman-echo.com/get?globals={{global_learning}}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/get?globals={{global_learning}}",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "globals",
+									"value": "{{global_learning}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "MultipleSetOfData",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2082d3a6-1212-4146-972b-39ba02613e15",
+								"exec": [
+									"",
+									"var companies =pm.environment.get(\"companies\");",
+									"if(!companies){",
+									"    companies = [\"GOOGLE\",\"FACEBOOK\",\"YOUTUB\",\"TWITTER\",\"AMAZON\"];",
+									"}",
+									"",
+									"var currentCompany = companies.shift();",
+									"pm.environment.set(\"company\", currentCompany);",
+									"pm.environment.set(\"companies\", companies);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "69ffe3a2-4717-4c2f-a45e-68c826af8fce",
+								"exec": [
+									"var companies = pm.environment.get(\"companies\");",
+									"if(companies && companies.length > 0){",
+									"    postman.setNextRequest(\"MultipleSetOfData\");",
+									"",
+									"}else{",
+									"    postman.setNextRequest(null);",
+									"",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"{{company}}\"\n}"
+						},
+						"url": {
+							"raw": "http://requestbin.fullcontact.com/1f1dnbz1",
+							"protocol": "http",
+							"host": [
+								"requestbin",
+								"fullcontact",
+								"com"
+							],
+							"path": [
+								"1f1dnbz1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": []
+		}
+	]
+}
