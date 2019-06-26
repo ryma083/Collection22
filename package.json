@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "scripts": {
+    "pre-test": "cd C:\Users\pinou\AppData\Roaming\npm\node_modules\newman\bin"
     "test-production": "node newman run tests/Collection2.json -e tests/LearningEnvironment.json -r cli,junit,json,htmlextra"
   },
   "author": "ryma",
