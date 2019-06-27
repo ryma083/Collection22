@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test-production": "newman run tests/Collection2.json -e tests/LearningEnvironment.json -r cli,junit,json,htmlextra --disable-unicode"
+    "test-production": "newman run tests/Collection2.json -e tests/LearningEnvironment.json --disable-unicode -r cli,junit,json,htmlextra"
   },
   "author": "ryma",
   "license": "ISC",
